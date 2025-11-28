@@ -10,7 +10,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div>
       <header><Navbar/></header>
-      <main>{children}</main>
+      <main className="bg-gray-50">{children}</main>
       <footer><Footer/></footer>
     </div>
   );
