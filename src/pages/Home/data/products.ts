@@ -1,5 +1,5 @@
 export type Product = {
-  id: number;
+  id: string;
   name: string;
   price: number;
   oldPrice?: number | null;
@@ -13,7 +13,7 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: 1,
+    id: "1",
     name: "Phasellus auctor tortor",
     price: 599.0,
     oldPrice: null,
@@ -26,7 +26,7 @@ export const products: Product[] = [
     badge: "HOT",
   },
   {
-    id: 2,
+    id: "2",
     name: "Mollis metus pellentest",
     price: 349.0,
     oldPrice: 400.0,
@@ -39,7 +39,7 @@ export const products: Product[] = [
     badge: "SALE",
   },
   {
-    id: 3,
+    id: "3",
     name: "Mauris volutpat feugiat",
     price: 180.0,
     oldPrice: null,
@@ -52,7 +52,7 @@ export const products: Product[] = [
     badge: null,
   },
   {
-    id: 4,
+    id: "4",
     name: "Elitem mauris voluptate",
     price: 299.0,
     oldPrice: null,
@@ -65,7 +65,7 @@ export const products: Product[] = [
     badge: null,
   },
   {
-    id: 1,
+    id: "5",
     name: "Phasellus auctor tortor",
     price: 599.0,
     oldPrice: null,
@@ -78,7 +78,7 @@ export const products: Product[] = [
     badge: "HOT",
   },
   {
-    id: 2,
+    id: "6",
     name: "Mollis metus pellentest",
     price: 349.0,
     oldPrice: 400.0,
@@ -91,7 +91,7 @@ export const products: Product[] = [
     badge: "SALE",
   },
   {
-    id: 3,
+    id: "7",
     name: "Mauris volutpat feugiat",
     price: 180.0,
     oldPrice: null,
@@ -104,7 +104,7 @@ export const products: Product[] = [
     badge: null,
   },
   {
-    id: 4,
+    id: "8",
     name: "Elitem mauris voluptate",
     price: 299.0,
     oldPrice: null,
