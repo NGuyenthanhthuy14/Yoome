@@ -44,7 +44,7 @@ const Banner = () => {
         </div>
         <div className="relative flex">
           <div className="">
-            <img src="/banner.png" className="sm:w-[640px] w-[250px] sm:h-[700px] h-[300px] absolute -bottom-10 sm:left-35 left-0" />
+            <img src="/banner.png" className="sm:w-[570px] w-[250px] sm:h-[700px] h-[300px] absolute -bottom-10 sm:left-25 left-0" />
           </div>
 
           <div className="flex flex-col absolute sm:right-[50px] right-5 sm:-top-100 -top-50 items-end">

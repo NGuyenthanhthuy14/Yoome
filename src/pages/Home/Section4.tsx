@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { products, type Product } from "./data/products"
 import { IoCartOutline } from "react-icons/io5"
-import { HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
+import { CheckCircleIcon, HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { MdZoomOutMap } from "react-icons/md"
 import { Link } from "react-router-dom"
 import ProductQuickViewModal from "./components/detail"
@@ -11,15 +11,34 @@ import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import type { AppDispatch } from "../../store/CartStore"
+import { useDispatch } from "react-redux"
+import { addCart, type CartItem } from "../../reducers/cartReducer"
 
 const Section4 = () => {
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [isSelectProduct, setIsSelectProduct] = useState<Product | null>(null)
+  const [addedIds, setAddedIds] = useState<string[]>([]);
 
   const handleDetail = (product: Product) => {
     setIsOpenModal(true)
     setIsSelectProduct(product)
   }
+
+	const dispatch = useDispatch<AppDispatch>();
+
+	const handleAdd = (product: Product) => {
+		const cartItem: CartItem = {
+			id: product.id,
+			image: product.image,
+			title: product.name,
+			price: product.price,
+			quantity: 1,
+			subtotal: product.price,
+		};
+		dispatch(addCart(cartItem));
+    setAddedIds((prev) => prev.includes(product.id) ? prev : [...prev, product.id]);
+	};
 
   return (
     <>
@@ -84,8 +103,9 @@ const Section4 = () => {
 												<div className="hover:text-pink-500">
 													<button
 														className="w-10 h-10 flex items-center justify-center border border-gray-200 hover:bg-black transition duration-150 bg-white text-gray-700 hover:text-pink-500"
+                            onClick={() => {handleAdd(product)}}
 													>
-														<IoCartOutline className="w-5 h-5" />
+														{addedIds.includes(product.id)? (<CheckCircleIcon className="w-5 h-5" />): (<IoCartOutline className="w-5 h-5" />)}
 													</button>
 												</div>
 
@@ -130,7 +150,7 @@ const Section4 = () => {
 										<button
 											className="w-10 h-10 flex items-center justify-center transition duration-150  text-gray-700 hover:text-pink-500"
 										>
-											<IoCartOutline className="w-5 h-5" />
+											{addedIds.includes(product.id)? (<CheckCircleIcon className="w-5 h-5" />): (<IoCartOutline className="w-5 h-5" />)}
 										</button>
 									</div>
 

@@ -11,6 +11,7 @@ const Section7 = () => {
 		"https://demo.theme-sky.com/yoome-cosmetic/wp-content/uploads/2019/03/brand-4-200x90.png",
 		"https://demo.theme-sky.com/yoome-cosmetic/wp-content/uploads/2019/03/brand-3-200x90.png",
 		"https://demo.theme-sky.com/yoome-cosmetic/wp-content/uploads/2019/03/brand-2-200x90.png",
+		"https://demo.theme-sky.com/yoome-cosmetic/wp-content/uploads/2019/03/brand-2-200x90.png",
 	];
 
 	return (

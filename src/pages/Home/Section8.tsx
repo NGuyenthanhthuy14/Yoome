@@ -40,7 +40,7 @@ const Section8 = () => {
 				<SwiperSlide>
 					<Link to="#"><img src="https://scontent-det1-1.cdninstagram.com/v/t51.2885-15/60708601_468390527243331_968772070680876184_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=QgE2CuAIr7wQ7kNvwE7H5eF&_nc_oc=Adk6bGlGqp-wc8-0Q_tiQaKW7U1n7xOvQN-D2xFEWe-nULeuxWeoIigiF6LleozNlfc&_nc_zt=23&_nc_ht=scontent-det1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_Afi8tX9SUeIy--1seAcq9wA3rk94aFRyOgr4-wJh48gJfw&oe=692D8CE9"/></Link>
 				</SwiperSlide>
-								<SwiperSlide>
+				<SwiperSlide>
 					<Link to="#"><img src="https://scontent-det1-1.cdninstagram.com/v/t51.2885-15/61518148_147030549761174_8359153953636858033_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=vauJMIroVyQQ7kNvwGcS7Ck&_nc_oc=AdnbtxycRtvfVMtqOOqmJWGVKoMkE1rGGZQEYYuVP0shSXZGI6ThS3_1R23M7IebdMY&_nc_zt=23&_nc_ht=scontent-det1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfjncI7YkZwsTDG_e2f8P2D3gwZZ4gj-TixXYSee1wWMyg&oe=692D88A9"/></Link>
 				</SwiperSlide>
 				<SwiperSlide>

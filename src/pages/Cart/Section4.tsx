@@ -1,28 +1,31 @@
-import { CheckCircleIcon, HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
-import { IoCartOutline } from "react-icons/io5";
-import { MdZoomOutMap } from "react-icons/md";
-import ProductQuickViewModal from "./components/detail";
-import { products, type Product } from "./data/products";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import type { AppDispatch } from "../../store/CartStore";
-import { addCart, type CartItem } from "../../reducers/CartReducer";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "../../store/CartStore";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { useState } from "react";
+import { addCart, type CartItem } from "../../reducers/cartReducer";
+import { products, type Product } from "../Home/data/products";
+import { CheckCircleIcon, HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { IoCartOutline } from "react-icons/io5";
+import { MdZoomOutMap } from "react-icons/md";
+import { Link } from "react-router-dom";
+import ProductQuickViewModal from "../Home/components/detail";
 
-const Section2 = () => {
+const Section4 = () => {
+	const cartItems = useSelector((state: RootState) => state.cart);
 	const [openModal, isOpenModal] = useState(false);
 	const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 	const [addedIds, setAddedIds] = useState<string[]>([]);
+
 
 	const handleDetail = (product: Product) => {
 		isOpenModal(true);
 		setSelectedProduct(product);
 	};
+
 
 	const dispatch = useDispatch<AppDispatch>();
 
@@ -36,14 +39,21 @@ const Section2 = () => {
 			subtotal: product.price,
 		};
 		dispatch(addCart(cartItem));
-		setAddedIds((prev) => prev.includes(product.id) ? prev : [...prev, product.id]);
+    setAddedIds((prev) => prev.includes(product.id) ? prev : [...prev, product.id]);
 	};
 
+
+	if (cartItems.length === 0) {
+		return (
+			<div className='bg-white'>
+			</div>
+		);
+	}
 	return (
 		<>
-			<div className="max-w-7xl mx-auto sm:mt-20 mt-70 px-4">
-				<div className="sm:text-4xl text-2xl font-playfair text-center italic">
-					NEW PRODUCTS
+			<div className="max-w-7xl mx-auto sm:mt-20 mt-70 px-4 mb-10">
+				<div className="sm:text-4xl text-2xl font-playfair text-center italic font-light">
+					You may be interested in…
 				</div>
 
 				<div className="mt-10">
@@ -138,10 +148,10 @@ const Section2 = () => {
 
 									<div className="hover:text-pink-500">
 										<button
-											className="w-10 h-10 flex items-center justify-center transition duration-150  text-gray-700 hover:text-pink-500"
+											className="w-10 h-10 flex items-center justify-center transition duration-500  text-gray-700 hover:text-pink-500"
 											onClick={() => handleAdd(product)}
 										>
-											<IoCartOutline className="w-5 h-5" />
+											{addedIds.includes(product.id)? (<CheckCircleIcon className="w-5 h-5" />): (<IoCartOutline className="w-5 h-5" />)}
 										</button>
 									</div>
 
@@ -163,8 +173,9 @@ const Section2 = () => {
 				product={selectedProduct}
 				onClose={() => isOpenModal(false)}
 			/>
-		</>
-	);
-};
 
-export default Section2;
+		</>
+	)
+}
+
+export default Section4

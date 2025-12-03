@@ -7,6 +7,7 @@ const NavbarHidden = () => {
 	const menu = [
 		{ label: "HOME", href: "/" },
 		{ label: "PAGE", href: "/page" },
+		{ label: "SHOP", href: "/shop" },
 		{ label: "BLOG", href: "/" },
 		{ label: "PORTFOLIO", href: "/" },
 		{ label: "FEATURE", href: "/" },

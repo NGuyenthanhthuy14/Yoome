@@ -20,6 +20,7 @@ const Navbar = () => {
   const menu = [
     { label: "HOME", href: "/" },
     { label: "PAGE", href: "/page" },
+    { label: "SHOP", href: "/shop" },
     { label: "BLOG", href: "/" },
     { label: "PORTFOLIO", href: "/" },
     { label: "FEATURE", href: "/" },
@@ -39,8 +40,8 @@ const Navbar = () => {
               <img src="https://demo.theme-sky.com/yoome-cosmetic/wp-content/themes/yoome/images/logo.png" className="h-12 w-auto" />
             </Link>
           </div>
-          <div className='flex gap-5'>
-            <div className="gap-12 items-center sm:flex hidden">
+          <div className='flex gap-10'>
+            <div className=" items-center  sm:flex hidden gap-5">
               <ConfigProvider
                 theme={{
                   components: {
