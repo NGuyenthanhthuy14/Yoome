@@ -8,9 +8,9 @@ const NavbarHidden = () => {
 		{ label: "HOME", href: "/" },
 		{ label: "PAGE", href: "/page" },
 		{ label: "SHOP", href: "/shop" },
-		{ label: "BLOG", href: "/" },
-		{ label: "PORTFOLIO", href: "/" },
-		{ label: "FEATURE", href: "/" },
+		{ label: "BLOG", href: "/blog" },
+		{ label: "PORTFOLIO", href: "/portfolio" },
+		{ label: "FEATURE", href: "/feature" },
 	];
 
 	const [isScrolled, setIsScrolled] = useState(false);

@@ -22,7 +22,7 @@ const Section3 = () => {
 
 	return (
 		<div className="bg-white">
-			<div className=" mx-110 bg-gray-50 p-10">
+			<div className=" sm:mx-110 mx-5 bg-gray-50 p-10">
 				<div className=" pb-4  border-b border-gray-300 ">
 					<div className="font-playfair font-light text-2xl italic text-gray-800">
 						CART TOTALS

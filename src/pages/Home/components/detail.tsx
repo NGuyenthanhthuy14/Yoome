@@ -1,7 +1,12 @@
+import type { AppDispatch } from '@/store/CartStore';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { CiStar } from 'react-icons/ci';
+import { useDispatch } from 'react-redux';
+import type { Product } from '../data/products';
+import { addCart, type CartItem } from '@/reducers/cartReducer';
+import { message } from 'antd';
 
 type ProductQuickViewProps = {
 	product: any;
@@ -14,7 +19,22 @@ const ProductQuickViewModal = ({ product, onClose, isOpen }: ProductQuickViewPro
 	if (!isOpen || !product) return null;
 
 	const [quantity, setQuantity] = useState(1);
+	const dispatch = useDispatch<AppDispatch>();
+  const [addedIds, setAddedIds] = useState<string[]>([]);
 
+	const handleAdd = (product: Product) => {
+		const cartItem: CartItem = {
+			id: product.id,
+			image: product.image,
+			title: product.name,
+			price: product.price,
+			quantity: 1,
+			subtotal: product.price,
+		};
+		dispatch(addCart(cartItem));
+    setAddedIds((prev) => prev.includes(product.id) ? prev : [...prev, product.id]);
+		message.success("Thêm vào giỏ hàng thành công")
+	};
 	const StarRating = ({ count }: { count: number }) => {
 		const totalStars = 5;
 		return (
@@ -81,7 +101,7 @@ const ProductQuickViewModal = ({ product, onClose, isOpen }: ProductQuickViewPro
 							</div>
 
 							<div className='text-white font-bold'>
-								<button className="grow px-6 py-3 bg-pink-400 hover:bg-black ">ADD TO CART</button>
+								<button className="grow px-6 py-3 bg-pink-400 hover:bg-black " onClick={() => {handleAdd(product)}}>ADD TO CART</button>
 							</div>
 						</div>
 

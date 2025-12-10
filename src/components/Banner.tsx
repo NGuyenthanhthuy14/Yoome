@@ -62,12 +62,12 @@ const Banner = () => {
       </div>
       <div className="w-full bg-pink-500 py-10  ">
         <div className="max-w-7xl mx-auto sm:px-0 px-5">
-          <div className="grid sm:grid-cols-4 grid-cols-2 ">
+          <div className="grid sm:grid-cols-4 grid-cols-2 sm:gap-20 gap-0">
             {product.map((item, index) => (
-              <div className="sm:flex block gap-5 sm:w-[340px] w-[140px] justify-center items-center sm:mb-0 mb-5" key={index}>
+              <div className="sm:flex block  sm:w-[340px] mx-6 sm:mx-0 w-[140px] justify-center items-center sm:mb-0 mb-5" key={index}>
                 <div className="flex items-center">
                   <Link to="#">
-                    <img src={item.image} className="sm:w-30 transform transition duration-500 hover:scale-110" />
+                    <img src={item.image} className="sm:w-50 transform transition duration-500 hover:scale-110 " />
                   </Link>
                 </div>
                 <div className="text-white flex flex-col gap-2 text-center">

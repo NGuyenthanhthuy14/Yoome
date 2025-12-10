@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import type { AppDispatch } from "../../store/CartStore"
 import { useDispatch } from "react-redux"
 import { addCart, type CartItem } from "../../reducers/cartReducer"
+import { message } from "antd"
 
 const Section4 = () => {
   const [isOpenModal, setIsOpenModal] = useState(false)
@@ -38,6 +39,7 @@ const Section4 = () => {
 		};
 		dispatch(addCart(cartItem));
     setAddedIds((prev) => prev.includes(product.id) ? prev : [...prev, product.id]);
+    message.success("Thêm thành công vào giỏ hàng!")
 	};
 
   return (

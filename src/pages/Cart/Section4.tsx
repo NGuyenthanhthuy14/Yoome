@@ -13,6 +13,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { MdZoomOutMap } from "react-icons/md";
 import { Link } from "react-router-dom";
 import ProductQuickViewModal from "../Home/components/detail";
+import { message } from "antd";
 
 const Section4 = () => {
 	const cartItems = useSelector((state: RootState) => state.cart);
@@ -40,6 +41,7 @@ const Section4 = () => {
 		};
 		dispatch(addCart(cartItem));
     setAddedIds((prev) => prev.includes(product.id) ? prev : [...prev, product.id]);
+		message.success("Thêm thành công vào giỏ hàng!")
 	};
 
 
@@ -51,7 +53,7 @@ const Section4 = () => {
 	}
 	return (
 		<>
-			<div className="max-w-7xl mx-auto sm:mt-20 mt-70 px-4 mb-10">
+			<div className="max-w-7xl mx-auto sm:mt-20 mt-10 px-4 mb-10">
 				<div className="sm:text-4xl text-2xl font-playfair text-center italic font-light">
 					You may be interested in…
 				</div>

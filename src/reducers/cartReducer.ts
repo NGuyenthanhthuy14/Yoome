@@ -58,7 +58,6 @@ const cartSlice = createSlice ({
 				items.subtotal = items.quantity * items.price
 			}
 		}
-	
 	}
 })
 
